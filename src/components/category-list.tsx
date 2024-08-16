@@ -2,19 +2,17 @@ import React from 'react';
 
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
-import data from '@/data.json';
+import { CATEGORIES } from '@/constants';
+import { toCapitalize } from '@/lib/utils';
 
-interface Props {
-  // Add your component props here
-}
-
-export default function CategoryList(props: Props) {
+export default function CategoryList() {
   return (
     <Card>
       <CardHeader />
-      <CardContent>
-        {data.productRequests.map((request) => (
-          <Badge key={request.category}>{request.category}</Badge>
+      <CardContent className="flex flex-wrap gap-2">
+        <Badge>All</Badge>
+        {CATEGORIES.map((category) => (
+          <Badge key={category}>{toCapitalize(category)}</Badge>
         ))}
       </CardContent>
     </Card>
