@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss';
+
 const { fontFamily } = require('tailwindcss/defaultTheme');
 
 const config = {
@@ -60,6 +61,10 @@ const config = {
         card: {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
+        },
+        badge: {
+          DEFAULT: 'hsl(var(--badge))',
+          foreground: 'hsl(var(--badge-foreground))',
         },
       },
       borderRadius: {
