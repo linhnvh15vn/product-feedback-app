@@ -1,18 +1,21 @@
 import React from 'react';
 
-import { Menu } from 'lucide-react';
+import Image from 'next/image';
 
 import CategoryList from '@/components/category-list';
 import RoadmapList from '@/components/roadmap-list';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 
-interface Props {}
-
-export default function Navigation(props: Props) {
+export default function Navigation() {
   return (
     <Sheet>
       <SheetTrigger>
-        <Menu />
+        <Image
+          src="/assets/shared/mobile/icon-hamburger.svg"
+          alt="menu"
+          width={20}
+          height={17}
+        />
       </SheetTrigger>
       <SheetContent>
         <CategoryList />
