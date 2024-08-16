@@ -1,12 +1,15 @@
 import React from 'react';
 
 import RequestCard from '@/components/request-card';
-import data from '@/data.json';
+import { type ProductRequest } from '@/types';
 
-export default function Page() {
+export default async function Page() {
+  const response = await fetch('http://localhost:8000/productRequests');
+  const data = (await response.json()) as ProductRequest[];
+
   return (
     <main className="container flex flex-col gap-4">
-      {data.productRequests.map((request) => (
+      {data.map((request) => (
         <RequestCard key={request.id} request={request} />
       ))}
     </main>
