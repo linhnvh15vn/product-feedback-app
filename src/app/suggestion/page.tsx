@@ -8,7 +8,7 @@ export default async function Page() {
   const data = (await response.json()) as ProductRequest[];
 
   return (
-    <main className="container flex flex-col gap-4">
+    <main className="container my-8 flex flex-col gap-4">
       {data.map((request) => (
         <RequestCard key={request.id} request={request} />
       ))}

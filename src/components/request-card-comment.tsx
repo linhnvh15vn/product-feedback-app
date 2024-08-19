@@ -14,19 +14,23 @@ interface Props {
 export default function RequestCardComment({ comment, isLast }: Props) {
   return (
     <section className="space-y-4">
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-4 md:gap-8">
         <Avatar>
           <AvatarImage src={comment.user.image} alt={comment.user.username} />
         </Avatar>
         <div className="flex-1">
           <h4>{comment.user.name}</h4>
-          <span>@{comment.user.username}</span>
+          <span className="text-xs text-muted-foreground">
+            @{comment.user.username}
+          </span>
         </div>
         <Button type="button" variant="ghost">
           Reply
         </Button>
       </div>
-      <p>{comment.content}</p>
+      <p className="text-xs text-muted-foreground md:pl-[72px]">
+        {comment.content}
+      </p>
 
       {!!comment.replies && (
         <div className="relative">
@@ -39,7 +43,7 @@ export default function RequestCardComment({ comment, isLast }: Props) {
         </div>
       )}
 
-      {!isLast && <Separator className="!my-6" />}
+      {!isLast && <Separator className="!my-6 md:!my-8" />}
     </section>
   );
 }

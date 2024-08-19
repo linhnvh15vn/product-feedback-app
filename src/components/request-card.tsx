@@ -23,7 +23,7 @@ export default function RequestCard({ request }: Props) {
   return (
     <Card key={request.id}>
       <CardHeader>
-        <CardTitle>
+        <CardTitle className="text-sm">
           <Link href={`/suggestion/${request.id}`}>{request.title}</Link>
         </CardTitle>
         <CardDescription>{request.description}</CardDescription>

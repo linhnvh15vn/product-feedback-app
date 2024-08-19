@@ -23,7 +23,7 @@ export default function RequestCardReply({ reply }: Props) {
           Reply
         </Button>
       </div>
-      <p>
+      <p className="text-xs text-muted-foreground md:pl-[72px]">
         <span className="font-bold text-primary">@{reply.replyingTo}</span>
         &nbsp;
         {reply.content}
