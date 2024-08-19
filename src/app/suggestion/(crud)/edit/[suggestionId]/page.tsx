@@ -16,7 +16,7 @@ export default async function Page({ params }: Props) {
   const request = (await response.json()) as ProductRequest;
 
   return (
-    <main className="container mt-10">
+    <main>
       <FeedbackForm formValues={request} />
     </main>
   );
