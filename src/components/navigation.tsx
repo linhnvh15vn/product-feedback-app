@@ -4,12 +4,19 @@ import Image from 'next/image';
 
 import CategoryList from '@/components/category-list';
 import RoadmapList from '@/components/roadmap-list';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from '@/components/ui/sheet';
 
 export default function Navigation() {
   return (
     <Sheet>
-      <SheetTrigger>
+      <SheetTrigger asChild>
         <Image
           src="/assets/shared/mobile/icon-hamburger.svg"
           alt="menu"
@@ -18,8 +25,14 @@ export default function Navigation() {
         />
       </SheetTrigger>
       <SheetContent>
-        <CategoryList />
-        <RoadmapList />
+        <SheetHeader>
+          <SheetTitle>&nbsp;</SheetTitle>
+          <SheetDescription>&nbsp;</SheetDescription>
+        </SheetHeader>
+        <div className="space-y-6">
+          <CategoryList />
+          <RoadmapList />
+        </div>
       </SheetContent>
     </Sheet>
   );

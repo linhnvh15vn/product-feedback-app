@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Link from 'next/link';
+
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import data from '@/data.json';
 import { toCapitalize } from '@/lib/utils';
@@ -15,8 +17,9 @@ export default function RoadmapList() {
 
   return (
     <Card>
-      <CardHeader>
+      <CardHeader className="flex flex-row items-center justify-between">
         <CardTitle>Roadmap</CardTitle>
+        <Link href="/roadmap">View</Link>
       </CardHeader>
       <CardContent>
         {Object.entries(dataGroupByStatus).map(([key, value]) => (

@@ -3,6 +3,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import AddComment from '@/components/add-comment';
 import RequestCard from '@/components/request-card';
 import RequestCardComment from '@/components/request-card-comment';
 import { buttonVariants } from '@/components/ui/button';
@@ -22,7 +23,7 @@ export default async function Page({ params }: Props) {
   const request = (await response.json()) as ProductRequest;
 
   return (
-    <main className="container space-y-6">
+    <main className="container my-6 space-y-6">
       <div className="flex items-center justify-between">
         <Link href="/suggestion" className="flex items-center gap-4">
           <Image
@@ -45,7 +46,7 @@ export default async function Page({ params }: Props) {
 
       <Card>
         <CardHeader>
-          <CardTitle>4 Comments</CardTitle>
+          <CardTitle className="text-lg">4 Comments</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
           {request.comments?.map((comment, index) => (
@@ -59,6 +60,8 @@ export default async function Page({ params }: Props) {
           ))}
         </CardContent>
       </Card>
+
+      <AddComment />
     </main>
   );
 }

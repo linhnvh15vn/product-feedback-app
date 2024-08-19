@@ -4,6 +4,7 @@ import React from 'react';
 
 import { zodResolver } from '@hookform/resolvers/zod';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
@@ -57,6 +58,8 @@ const defaultValues: InferFeedbackFormSchema = {
 };
 
 export default function FeedbackForm({ formValues }: Props) {
+  const router = useRouter();
+
   const isEdit = !!formValues;
 
   const form = useForm<InferFeedbackFormSchema>({
@@ -80,9 +83,9 @@ export default function FeedbackForm({ formValues }: Props) {
           alt="icon"
           width={40}
           height={40}
-          className="absolute -top-1/3"
+          className="absolute -top-1/2 translate-y-1/2"
         />
-        <CardTitle>
+        <CardTitle className="text-lg">
           {isEdit ? `Editing '${formValues.title}'` : 'Create New Feedback'}
         </CardTitle>
       </CardHeader>
@@ -191,7 +194,12 @@ export default function FeedbackForm({ formValues }: Props) {
         <Button type="submit" className="w-full">
           Add Feedback
         </Button>
-        <Button type="button" variant="tertiary" className="w-full">
+        <Button
+          type="button"
+          variant="tertiary"
+          className="w-full"
+          onClick={() => router.back()}
+        >
           Cancel
         </Button>
         {isEdit && (
