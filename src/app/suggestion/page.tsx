@@ -1,5 +1,6 @@
 import React from 'react';
 
+import CallToAction from '@/components/call-to-action';
 import RequestCard from '@/components/request-card';
 import { type ProductRequest } from '@/types';
 
@@ -8,7 +9,9 @@ export default async function Page() {
   const data = (await response.json()) as ProductRequest[];
 
   return (
-    <main className="container my-8 flex flex-col gap-4">
+    <main className="container flex flex-col gap-4">
+      <CallToAction />
+
       {data.map((request) => (
         <RequestCard key={request.id} request={request} />
       ))}

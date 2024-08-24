@@ -19,7 +19,7 @@ export default function CallToAction() {
 
   return (
     pathname === '/suggestion' && (
-      <div className="container flex h-14 items-center gap-10 bg-tertiary">
+      <div className="container flex h-14 items-center gap-10 rounded-xl bg-tertiary">
         <div className="hidden items-center gap-4 text-white md:flex">
           <Image
             src="/assets/shared/icon-suggestions.svg"

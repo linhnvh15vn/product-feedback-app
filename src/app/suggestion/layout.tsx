@@ -1,6 +1,5 @@
 import React from 'react';
 
-import CallToAction from '@/components/call-to-action';
 import Header from '@/components/header';
 import HeaderTablet from '@/components/header-tablet';
 
@@ -10,10 +9,9 @@ interface Props {
 
 export default function Layout({ children }: Props) {
   return (
-    <div className="md:py-14">
+    <div className="xl:container md:py-14 xl:grid xl:grid-cols-[255px_minmax(0,1fr)] xl:py-24">
       <Header />
       <HeaderTablet />
-      <CallToAction />
       {children}
     </div>
   );
